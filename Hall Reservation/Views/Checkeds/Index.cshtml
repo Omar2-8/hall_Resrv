@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Hall_Reservation.Models.Checked>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hall)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Booking.BookingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hall.HallId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusNavigation.CheckedId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.UserId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CheckId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CheckId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CheckId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
