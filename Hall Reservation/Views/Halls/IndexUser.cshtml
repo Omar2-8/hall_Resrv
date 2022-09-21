@@ -1,0 +1,121 @@
+﻿@model IEnumerable<Hall_Reservation.Models.Hall>
+
+@{
+    ViewData["Title"] = "IndexUser";
+    var user = ViewBag.UserId;
+    Layout = "~/Views/Shared/Home.cshtml";  
+
+}
+<form   asp-action="IndexUser" >
+    <div class="input-group">
+        <input class="form-control"  name="searchTerm" placeholder="Search by the Name or Category or address"/>
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">
+                Search
+            </button>
+        </div>
+        <div class="input-group-append">
+            <a class="btn btn-secondary" asp-action="IndexUser">
+               Reset Search
+            </a>
+        </div>
+    </div>
+</form>
+
+<div class="py-5">
+    <div class="container">
+        <div class="row gy-4">
+@foreach (var item in Model)
+{
+    <div class="col-md-4 p-4">
+        <div class="card h-100 " style="width: 20rem;">
+            <img class="card-img-top" src="~/images/@Html.DisplayFor(modelItem => item.ImagePath)" alt="Card image cap">
+            <div class="card-body">
+             <h4 class="card-title">@Html.DisplayFor(modelItem => item.HallName) for  @Html.DisplayFor(modelItem => item.Category.CatId) </h4>
+              <h5> Capacity is @Html.DisplayFor(modelItem => item.HallCapacity) or less </h5>
+              <h6> @Html.DisplayFor(modelItem => item.BookingPrice) Per Day</h6>
+             <h6>Location :   @Html.DisplayFor(modelItem => item.Address.AddressId)/ @Html.DisplayFor(modelItem => item.Street)/@Html.DisplayFor(modelItem => item.BuildingNumber)</h6>
+    
+                <p class="card-text"> @Html.DisplayFor(modelItem => item.HallDescription)</p>
+   
+    <a href="~/Bookings/CreateUser/@item.HallId" class="btn btn-primary">Book Now</a>
+             </div>
+        </div>
+    </div>
+
+}
+        </div>
+    </div>
+</div>
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HallName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HallCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HallDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuildingNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HallName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HallCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImagePath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HallDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuildingNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address.AddressId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CatId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HallId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HallId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HallId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@

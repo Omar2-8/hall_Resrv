@@ -12,17 +12,88 @@ namespace Hall_Reservation.Controllers
     public class HallsController : Controller
     {
         private readonly ModelContext _context;
+        private readonly IWebHostEnvironment _webHostEnviroment;
 
-        public HallsController(ModelContext context)
+        public HallsController(ModelContext context, IWebHostEnvironment webHostEnviroment)
         {
             _context = context;
+            _webHostEnviroment = webHostEnviroment;
         }
 
         // GET: Halls
+
+        public  IEnumerable<Hall>  Search(string searchTerm)
+        {
+
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+               // var modelContext =
+                  return  _context.Halls.Include(h => h.Address).Include(h => h.Category);
+               // View(await modelContext.ToListAsync());
+
+            }
+            else
+            {
+               // var modelContext
+                return _context.Halls.Where(x => x.HallName.Contains(searchTerm)
+                || x.CategoryName.Contains(searchTerm) || x.AddressName.Contains(searchTerm)).
+                Include(h => h.Address).Include(h => h.Category);
+                
+                    //View(await modelContext.ToListAsync());
+
+            }
+
+        }
+        public async Task<IActionResult> IndexUser(string searchTerm)
+            {
+            try
+            {
+                if (string.IsNullOrEmpty(searchTerm))
+            {
+                var modelContext = _context.Halls.Include(h => h.Address).Include(h => h.Category);
+                return View(await modelContext.ToListAsync());
+
+            }
+            else
+            {
+                var modelContext = _context.Halls.Include(h => h.Address).Include(h => h.Category)
+                    .Where(x => x.HallName.Contains(searchTerm)
+                || x.Category.CatName.Contains(searchTerm) || x.Address.City.Contains(searchTerm));
+               
+                return View(await modelContext.ToListAsync());
+
+            }
+
+            }
+            catch (Exception)
+            {
+
+                return RedirectToAction("Login", "LoginAndRegestration");
+            }
+            
+            
+        }
+        //public async Task<IActionResult> IndexUser()
+        //{
+        //    var modelContext = _context.Halls.Include(h => h.Address).Include(h => h.Category);
+        //    return View(await modelContext.ToListAsync());
+        //}
         public async Task<IActionResult> Index()
         {
-            var modelContext = _context.Halls.Include(h => h.Address).Include(h => h.Category);
+            try
+            { 
+                var modelContext = _context.Halls.Include(h => h.Address).Include(h => h.Category);
             return View(await modelContext.ToListAsync());
+
+            }
+            catch (Exception)
+            {
+
+               return  RedirectToAction("Login", "LoginAndRegestration");
+            }
+           
+
+          
         }
 
         // GET: Halls/Details/5
@@ -50,6 +121,9 @@ namespace Hall_Reservation.Controllers
         {
             ViewData["AddressId"] = new SelectList(_context.Addresses, "AddressId", "AddressId");
             ViewData["CategoryId"] = new SelectList(_context.Categories, "CatId", "CatId");
+            ViewData["Address"] = new SelectList(_context.Addresses, "City", "City");
+            ViewData["Category"] = new SelectList(_context.Categories, "CatName", "CatName");
+
             return View();
         }
 
@@ -58,17 +132,41 @@ namespace Hall_Reservation.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HallId,CategoryId,HallName,HallCapacity,ImagePath,HallDescription,BookingPrice,AddressId,Street,BuildingNumber")] Hall hall)
+        public async Task<IActionResult> Create([Bind("HallId,HallName,HallCapacity,HallDescription,BookingPrice,Street,BuildingNumber,ImageFile,CategoryName,AddressName")] Hall hall)
         {
-            if (ModelState.IsValid)
+            try
             {
+                var cat = _context.Categories.First(x => x.CatName == hall.CategoryName).CatId;
+                var address = _context.Addresses.First(x => x.City == hall.AddressName).AddressId;
+           
+                string fileName = Guid.NewGuid().ToString() + "_" + hall.ImageFile.FileName;
+                string extension = Path.GetExtension(hall.ImageFile.FileName);
+                hall.ImagePath = fileName;
+                string path = Path.Combine(_webHostEnviroment.WebRootPath + "/images/" + fileName);
+                using (var filestream = new FileStream(path, FileMode.Create))
+                {
+                    await hall.ImageFile.CopyToAsync(filestream);
+                }
+
+                hall.CategoryId = cat;
+                hall.AddressId = address;
+
+
                 _context.Add(hall);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+            
             ViewData["AddressId"] = new SelectList(_context.Addresses, "AddressId", "AddressId", hall.AddressId);
             ViewData["CategoryId"] = new SelectList(_context.Categories, "CatId", "CatId", hall.CategoryId);
             return View(hall);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         // GET: Halls/Edit/5

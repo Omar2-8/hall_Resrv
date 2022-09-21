@@ -56,13 +56,14 @@ namespace Hall_Reservation.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("VisaId,VisaName,VisaNumber,VisaAmount,EndDate,CvcCvv,UserId")] Visa visa)
+        public async Task<IActionResult> Create([Bind("VisaId,VisaName,VisaNumber,VisaAmount,EndDate,CvcCvv")] Visa visa,decimal?id)
         {
+            visa.UserId = id;
             if (ModelState.IsValid)
             {
                 _context.Add(visa);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("index","Home");
             }
             ViewData["UserId"] = new SelectList(_context.Users, "UserId", "UserId", visa.UserId);
             return View(visa);

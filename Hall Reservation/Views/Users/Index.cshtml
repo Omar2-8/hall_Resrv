@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    var user = ViewBag.UserId;
     Layout = "~/Views/Shared/DashboardLayout.cshtml";  
 
 }
@@ -60,12 +61,12 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserImage)
+              <img src="~/images/@Html.DisplayFor(modelItem => item.UserImage)" class="img-thumbnail max-width: 10%"> 
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.UserId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.UserId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.UserId">Delete</a>
+                <button  type="button" class="btn btn-primary btn-sm"><a asp-action="Edit" asp-route-id="@item.UserId">Edit</a></button> |
+                <button  type="button" class="btn btn-primary btn-sm"><a asp-action="Details" asp-route-id="@item.UserId">Details</a></button> |
+                <button  type="button" class="btn btn-primary btn-sm"><a asp-action="Delete" asp-route-id="@item.UserId">Delete</a></button>
             </td>
         </tr>
 }

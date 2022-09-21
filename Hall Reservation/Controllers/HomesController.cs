@@ -12,16 +12,25 @@ namespace Hall_Reservation.Controllers
     public class HomesController : Controller
     {
         private readonly ModelContext _context;
+        private readonly IWebHostEnvironment _webHostEnviroment;
 
-        public HomesController(ModelContext context)
+        public HomesController(ModelContext context, IWebHostEnvironment webHostEnviroment)
         {
             _context = context;
+            _webHostEnviroment = webHostEnviroment; 
         }
+        public async Task<IActionResult> IndexUser()
 
+        {
+
+            return View(await _context.Homes.ToListAsync());
+        }
         // GET: Homes
         public async Task<IActionResult> Index()
+
         {
-              return View(await _context.Homes.ToListAsync());
+            
+            return View(await _context.Homes.ToListAsync());
         }
 
         // GET: Homes/Details/5
@@ -53,16 +62,53 @@ namespace Hall_Reservation.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Image1,Title1,Image2,Title2,Image3,Title3")] Home home)
+        public async Task<IActionResult> Create([Bind("Id,Title1,Title2,Title3,ImageFile1,ImageFile2,ImageFile3")] Home home)
         {
-            if (ModelState.IsValid)
+            try
             {
+                home.Image1 = await saveImage(home.ImageFile1);
+                home.Image2 = await saveImage(home.ImageFile2);
+                home.Image3 = await saveImage(home.ImageFile3);
+
+
                 _context.Add(home);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+            
             return View(home);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+                
         }
+        private async Task<string> saveImage(IFormFile file)
+        {
+            try
+            {
+                string wwwrootPath = _webHostEnviroment.WebRootPath;
+            string fileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+            string extension = Path.GetExtension(file.FileName);
+            //user.UserImage = fileName;
+            string path = Path.Combine(wwwrootPath + "/Images/" + fileName);
+            using (var filestream = new FileStream(path, FileMode.Create))
+            {
+                  await  file.CopyToAsync(filestream);
+            }
+            return fileName;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+        } 
 
         // GET: Homes/Edit/5
         public async Task<IActionResult> Edit(decimal? id)

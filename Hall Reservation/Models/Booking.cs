@@ -16,6 +16,7 @@ namespace Hall_Reservation.Models
         public DateTime EndDate { get; set; }
         public decimal? HallId { get; set; }
         public decimal? UserId { get; set; }
+        public DateTime Creation_Date { get; set; }
 
         public virtual Hall? Hall { get; set; }
         public virtual User? User { get; set; }

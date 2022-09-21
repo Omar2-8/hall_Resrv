@@ -8,377 +8,413 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Hall_Reservation
 build_property.RootNamespace = Hall_Reservation
-build_property.ProjectDir = C:\Users\Lenovo\Desktop\Hall-Resarvation\Hall Reservation\
+build_property.ProjectDir = C:\Users\algohti\Desktop\hall_Resrv\Hall Reservation\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Lenovo\Desktop\Hall-Resarvation\Hall Reservation
+build_property.MSBuildProjectDirectory = C:\Users\algohti\Desktop\hall_Resrv\Hall Reservation
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/AboutUs/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/AboutUs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRVc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/AboutUs/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/AboutUs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRVc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/AboutUs/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/AboutUs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRVc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/AboutUs/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/AboutUs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRVc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/AboutUs/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/AboutUs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRVc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Addresses/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Addresses/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Addresses/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Addresses/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Addresses/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Addresses/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Addresses/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Addresses/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Addresses/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Addresses/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Bookings/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Bookings/Between.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ3NcQmV0d2Vlbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Bookings/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Bookings/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Bookings/CreateUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ3NcQ3JlYXRlVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Bookings/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Bookings/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Bookings/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Bookings/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Bookings/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Bookings/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Bookings/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Categories/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Bookings/Index1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ3NcSW5kZXgxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Bookings/IndexUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ3NcSW5kZXhVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Categories/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Categories/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Categories/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Categories/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Categories/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Checkeds/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Checkeds/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tlZHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Checkeds/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Checkeds/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tlZHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Checkeds/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Checkeds/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tlZHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Checkeds/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Checkeds/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tlZHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Checkeds/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Checkeds/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tlZHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Checklists/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Checklists/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tsaXN0c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Checklists/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Checklists/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tsaXN0c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Checklists/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Checklists/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tsaXN0c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Checklists/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Checklists/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tsaXN0c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Checklists/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Checklists/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tsaXN0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/ContactUs/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/ContactUs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/ContactUs/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/ContactUs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/ContactUs/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/ContactUs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/ContactUs/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/ContactUs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/ContactUs/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/ContactUs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/DashBoard/Admin.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/DashBoard/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaEJvYXJkXEFkbWluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Halls/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Halls/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFsbHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Halls/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Halls/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFsbHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Halls/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Halls/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFsbHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Halls/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Halls/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFsbHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Halls/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Halls/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFsbHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Homes/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Halls/IndexUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFsbHNcSW5kZXhVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Homes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Homes/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Homes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Homes/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Homes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Homes/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Homes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Homes/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Homes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Home/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Home/Privacy.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Home/IndexUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/LoginAndRegestration/Login.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/LoginAndRegestration/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5BbmRSZWdlc3RyYXRpb25cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/LoginAndRegestration/Register.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/LoginAndRegestration/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5BbmRSZWdlc3RyYXRpb25cUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Logins/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Logins/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Logins/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Logins/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Logins/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Logins/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Logins/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Logins/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Logins/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Logins/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Payments/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Payments/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Payments/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Payments/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Payments/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Payments/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Payments/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Payments/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Payments/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Payments/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Reviews/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Reviews/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Reviews/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Reviews/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Reviews/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Reviews/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Reviews/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Reviews/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Reviews/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Reviews/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Rolesses/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Rolesses/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNzZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Rolesses/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Rolesses/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNzZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Rolesses/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Rolesses/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNzZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Rolesses/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Rolesses/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNzZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Rolesses/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Rolesses/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNzZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Shared/DashboardLayout.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Shared/DashboardLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERhc2hib2FyZExheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Shared/Error.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Shared/Home.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Shared/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhvbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Testimonials/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Testimonials/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb25pYWxzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Testimonials/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Testimonials/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb25pYWxzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Testimonials/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Testimonials/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb25pYWxzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Testimonials/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Testimonials/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb25pYWxzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Testimonials/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Testimonials/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb25pYWxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Users/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Testimonials/IndexUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb25pYWxzXEluZGV4VXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Users/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Users/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Users/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Users/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Users/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Users/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Users/DetailsUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlsc1VzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Users/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Users/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Visas/Create.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Visas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzYXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Visas/Delete.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Visas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzYXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Visas/Details.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Visas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzYXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Visas/Edit.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Visas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzYXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Visas/Index.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Visas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/_ViewImports.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/_ViewStart.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/Hall-Resarvation/Hall Reservation/Views/Shared/_Layout.cshtml]
+[C:/Users/algohti/Desktop/hall_Resrv/Hall Reservation/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-wdzsm94z88

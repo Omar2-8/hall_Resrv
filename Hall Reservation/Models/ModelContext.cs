@@ -12,7 +12,8 @@ namespace Hall_Reservation.Models
         }
 
         public ModelContext(DbContextOptions<ModelContext> options)
-            : base(options)
+            : 
+            base(options)
         {
         }
 
@@ -38,7 +39,7 @@ namespace Hall_Reservation.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+ 
                 optionsBuilder.UseOracle("USER ID= JOR15_User88;PASSWORD=Ohmmss9852;DATA SOURCE=94.56.229.181:3488/traindb");
             }
         }
@@ -50,6 +51,7 @@ namespace Hall_Reservation.Models
 
             modelBuilder.Entity<AboutU>(entity =>
             {
+                
                 entity.HasKey(e => e.Id)
                     .HasName("ABOUT_US_PK");
 
@@ -57,7 +59,7 @@ namespace Hall_Reservation.Models
                 entity.Property(e => e.Id)
                     .HasColumnType("NUMBER")
                     .ValueGeneratedOnAdd()
-                    .HasColumnName("BOOKING_ID");
+                    .HasColumnName("ID");
 
                 entity.Property(e => e.Address)
                     .HasMaxLength(100)
@@ -140,6 +142,10 @@ namespace Hall_Reservation.Models
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("SYS_C00273162");
+                
+                entity.Property(e => e.Creation_Date)
+                  .HasColumnType("DATE")
+                  .HasColumnName("CREATION_DATE");
             });
 
             modelBuilder.Entity<Category>(entity =>

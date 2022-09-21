@@ -21,7 +21,7 @@ namespace Hall_Reservation.Controllers
         // GET: AboutUs
         public async Task<IActionResult> Index()
         {
-            var modelContext = _context.AboutUs.Include(a => a.Home);
+            var modelContext = _context.AboutUs;
             return View(await modelContext.ToListAsync());
         }
 
@@ -56,10 +56,11 @@ namespace Hall_Reservation.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Email,PhoneNumber,Address,HomeId")] AboutU aboutU)
+        public async Task<IActionResult> Create([Bind("Id,Name,Email,PhoneNumber,Address")] AboutU aboutU)
         {
             if (ModelState.IsValid)
             {
+                aboutU.HomeId = 4;
                 _context.Add(aboutU);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -106,7 +107,7 @@ namespace Hall_Reservation.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AboutUExists(aboutU.Id))
+                    if (!AboutUExists((int)aboutU.Id))
                     {
                         return NotFound();
                     }

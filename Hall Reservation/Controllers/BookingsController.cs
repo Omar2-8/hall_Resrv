@@ -6,22 +6,46 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Hall_Reservation.Models;
+using MimeKit;
+using MimeKit.Text;
+using MailKit.Net.Smtp;
+using MailKit.Security;
 
 namespace Hall_Reservation.Controllers
 {
     public class BookingsController : Controller
     {
         private readonly ModelContext _context;
+        private readonly IConfiguration _config;
 
-        public BookingsController(ModelContext context)
+        public BookingsController(ModelContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
         }
 
         // GET: Bookings
+
+        public async Task<IActionResult> IndexUser()
+        {
+            var modelContext = _context.Bookings.Include(b => b.Hall).Include(b => b.User);
+            return View(await modelContext.ToListAsync());
+        }
         public async Task<IActionResult> Index()
         {
             var modelContext = _context.Bookings.Include(b => b.Hall).Include(b => b.User);
+            return View(await modelContext.ToListAsync());
+        }
+        public async Task<IActionResult> Index1()
+        {
+            var modelContext = _context.Bookings.Include(b => b.Hall).Include(b => b.User);
+            return View(await modelContext.ToListAsync());
+        }
+
+        public async Task<IActionResult> Between(DateTime start,DateTime end)
+        {
+            var modelContext = _context.Bookings.Where(x=>x.StartDate >= start && x.EndDate <=end).
+                Include(b => b.Hall).Include(b => b.User);
             return View(await modelContext.ToListAsync());
         }
 
@@ -44,6 +68,24 @@ namespace Hall_Reservation.Controllers
 
             return View(booking);
         }
+        public async Task<IActionResult> CreateUser(decimal? id)
+        {
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("Login", "LoginAndRegestration");
+            }
+           
+
+            var booking = new Booking();
+            booking.HallId = id;
+            booking.UserId = HttpContext.Session.GetInt32("UserId");
+            ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
+
+            ViewData["HallId"] = booking.HallId;
+
+
+            return View(booking);
+        }
 
         // GET: Bookings/Create
         public IActionResult Create()
@@ -62,9 +104,11 @@ namespace Hall_Reservation.Controllers
         {
             if (ModelState.IsValid)
             {
+                booking.Creation_Date = DateTime.Now;
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                Content("<script language='javascript' type='text/javascript'>alert('Thanks for your reservation! You will reseve an Email when we Confirm your Reservation');</script>");
+                return RedirectToAction("IndexUser", "Halls");
             }
             ViewData["HallId"] = new SelectList(_context.Halls, "HallId", "HallId", booking.HallId);
             ViewData["UserId"] = new SelectList(_context.Users, "UserId", "UserId", booking.UserId);
@@ -88,6 +132,77 @@ namespace Hall_Reservation.Controllers
             ViewData["UserId"] = new SelectList(_context.Users, "UserId", "UserId", booking.UserId);
             return View(booking);
         }
+        public async Task<IActionResult> Accept(decimal? id)
+        {
+            if (id == null || _context.Bookings == null)
+            {
+                return NotFound();
+            }
+
+            var booking = await _context.Bookings.FindAsync(id);
+            var user = await _context.Users.FindAsync(booking.UserId);
+            sendEmail(user.Email,user.UserId);
+            new Checked()
+            {
+                Status = 1,
+                CheckedDate = DateTime.Now,
+                BookingId = booking.BookingId,
+                HallId = booking.HallId,
+                UserId = booking.UserId,
+
+
+            };
+
+
+            if (booking == null)
+            {
+                return NotFound();
+            }
+            ViewData["HallId"] = new SelectList(_context.Halls, "HallId", "HallId", booking.HallId);
+            ViewData["UserId"] = new SelectList(_context.Users, "UserId", "UserId", booking.UserId);
+            return RedirectToAction("Index", "Bookings"); ;
+        }
+        private void sendEmail(string userEmail,decimal id)
+        {
+            var email = new MimeMessage();
+            email.From.Add(MailboxAddress.Parse(_config.GetSection("EmailConfiguration:From").Value));
+            email.To.Add(MailboxAddress.Parse(userEmail));
+            email.Subject = "Employee Password ";
+            email.Body = new TextPart(TextFormat.Html) { Text = "you reservation Have been Confirmed !! \n please head to this link to complete your payment \n https://localhost:44342/Visas/Create/"+id};
+            var smtp = new SmtpClient();
+            smtp.Connect(_config.GetSection("EmailConfiguration:SmtpServer").Value, 587, SecureSocketOptions.StartTls);
+            smtp.Authenticate(_config.GetSection("EmailConfiguration:Username").Value, _config.GetSection("EmailConfiguration:Password").Value);
+            smtp.Send(email);
+            smtp.Disconnect(true);
+        }
+
+        public async Task<IActionResult> Decline(decimal? id)
+        {
+            if (id == null || _context.Bookings == null)
+            {
+                return NotFound();
+            }
+
+            var booking = await _context.Bookings.FindAsync(id);
+            new Checked()
+            {
+                Status = 0,
+                CheckedDate = DateTime.Now,
+                BookingId = booking.BookingId,
+                HallId = booking.HallId,
+                UserId = booking.UserId,
+
+
+            };
+            if (booking == null)
+            {
+                return NotFound();
+            }
+            ViewData["HallId"] = new SelectList(_context.Halls, "HallId", "HallId", booking.HallId);
+            ViewData["UserId"] = new SelectList(_context.Users, "UserId", "UserId", booking.UserId);
+            return View(booking);
+        }
+
 
         // POST: Bookings/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Hall_Reservation.Models.Testimonial>
+
+@{
+    ViewData["Title"] = "IndexUser";
+    var user = ViewBag.UserId;
+    Layout = "~/Views/Shared/Home.cshtml";
+}
+
+<h1>Testimonials from Users</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opinion)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Home)
+            </th>*@
+         @*   <th>
+                @Html.DisplayNameFor(model => model.StatusNavigation)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opinion)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Home.Id)
+            </td>*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.StatusNavigation.CheckedId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.User.UserName)
+            </td>
+            <td>
+                @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
+                
+                  
+            </td>
+        </tr>
+}
+    </tbody>
+    <a asp-action="Create" class="btn btn-secondary" >Send Us Your Testimonial</a>
+</table>

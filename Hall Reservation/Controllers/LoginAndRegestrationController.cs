@@ -17,19 +17,19 @@ namespace Hall_Reservation.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register([Bind("UserId,Fname,Lname,Password,UserName,UserImage,Email,Phonenumber")] User user, string username, string password)
+        public async Task<IActionResult> Register([Bind("UserId,Fname,Lname,Password,UserName,Email,Phonenumber,ImageFile")] User user, string username, string password)
         {
             if (ModelState.IsValid)
             {
                 string wwwrootPath = _webHostEnviroment.WebRootPath;
-                // string fileName = Guid.NewGuid().ToString() + "_" + user.ImageFile.FileName;
-                //string extension = Path.GetExtension(user.ImageFile.FileName);
-                //user.UserImage = fileName;
-                //string path = Path.Combine(wwwrootPath + "/Images/" + fileName);
-                //using (var filestream = new FileStream(path, FileMode.Create))
-                //{
-                //    await user.ImageFile.CopyToAsync(filestream);
-                //}
+                string fileName = Guid.NewGuid().ToString() + "_" + user.ImageFile.FileName;
+                string extension = Path.GetExtension(user.ImageFile.FileName);
+                user.UserImage = fileName;
+                string path = Path.Combine(wwwrootPath + "/Images/" + fileName);
+                using (var filestream = new FileStream(path, FileMode.Create))
+                {
+                    await user.ImageFile.CopyToAsync(filestream);
+                }
 
                 _context.Add(user);
                 await _context.SaveChangesAsync();
@@ -65,18 +65,25 @@ namespace Hall_Reservation.Controllers
                 {
                     case 1:
                         HttpContext.Session.SetInt32("UserId", (int)auth.UserId);
-                        HttpContext.Session.SetString("AdminName", auth.UserName);
+                        HttpContext.Session.SetString("UserName", auth.UserName);
                         var username = User.Identity.Name;
                         return RedirectToAction("Admin", "DashBoard");
                     case 2:
                         HttpContext.Session.SetInt32("UserId", (int)auth.UserId);
-                        HttpContext.Session.SetString("AdminName", auth.UserName);
+                        HttpContext.Session.SetString("UserName", auth.UserName);
                         var urname = User.Identity.Name;
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("IndexUser", "Home");
 
                 }
             }
             return View();
+        }
+        public IActionResult logout()
+        {
+
+            HttpContext.Session.Clear();
+
+            return RedirectToAction("login", "LoginAndRegestration");
         }
     }
 }

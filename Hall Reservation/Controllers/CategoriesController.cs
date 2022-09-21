@@ -12,10 +12,14 @@ namespace Hall_Reservation.Controllers
     public class CategoriesController : Controller
     {
         private readonly ModelContext _context;
+        private readonly IWebHostEnvironment _webHostEnviroment;
 
-        public CategoriesController(ModelContext context)
+         
+
+        public CategoriesController(ModelContext context, IWebHostEnvironment webHostEnviroment)
         {
             _context = context;
+            _webHostEnviroment = webHostEnviroment;
         }
 
         // GET: Categories
@@ -53,15 +57,36 @@ namespace Hall_Reservation.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CatId,CatName,CatImagePath")] Category category)
+        public async Task<IActionResult> Create([Bind("CatId,CatName,ImageFile")] Category category)
         {
-            if (ModelState.IsValid)
+            try
             {
+
+                string fileName = Guid.NewGuid().ToString() + "_" + category.ImageFile.FileName;
+                string extension = Path.GetExtension(category.ImageFile.FileName);
+                category.CatImagePath = fileName;
+                string path = Path.Combine(_webHostEnviroment.WebRootPath + "/Images/" + fileName);
+                using (var filestream = new FileStream(path, FileMode.Create))
+                {
+                    await category.ImageFile.CopyToAsync(filestream);
+                }
+
+
+
                 _context.Add(category);
                 await _context.SaveChangesAsync();
+                ViewBag.Category = category.CatName;
                 return RedirectToAction(nameof(Index));
+
             }
-            return View(category);
+            catch (Exception)
+            {
+
+                throw;
+            }
+                
+            
+            
         }
 
         // GET: Categories/Edit/5

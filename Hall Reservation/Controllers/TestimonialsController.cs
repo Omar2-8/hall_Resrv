@@ -21,7 +21,15 @@ namespace Hall_Reservation.Controllers
         // GET: Testimonials
         public async Task<IActionResult> Index()
         {
-            var modelContext = _context.Testimonials.Include(t => t.Home).Include(t => t.StatusNavigation).Include(t => t.User);
+            var modelContext = _context.Testimonials.Include(t => t.Home).Include(t => t.StatusNavigation).Include(t => t.User)
+                .Where(x => x.Status == 2); 
+            return View(await modelContext.ToListAsync());
+        }
+        public async Task<IActionResult> IndexUser()
+        {
+           
+            var modelContext = _context.Testimonials.Include(t => t.Home).Include(t => t.StatusNavigation).Include(t => t.User)
+                .Where(x=>x.Status==1);
             return View(await modelContext.ToListAsync());
         }
 
@@ -52,19 +60,16 @@ namespace Hall_Reservation.Controllers
                 return NotFound();
             }
 
-            var testimonial = await _context.Testimonials
-                .Include(t => t.Home)
-                .Include(t => t.StatusNavigation)
-                .Include(t => t.User)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var testimonial = await _context.Testimonials.FindAsync(id);
 
             testimonial.Status = 1;
+            _context.SaveChanges();
             if (testimonial == null)
             {
                 return NotFound();
             }
 
-            return View(testimonial);
+            return RedirectToAction("Index", "Testimonials");
         }
         public async Task<IActionResult> Decline(decimal? id)
         {
@@ -73,24 +78,27 @@ namespace Hall_Reservation.Controllers
                 return NotFound();
             }
 
-            var testimonial = await _context.Testimonials
-                .Include(t => t.Home)
-                .Include(t => t.StatusNavigation)
-                .Include(t => t.User)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var testimonial = await _context.Testimonials.FindAsync(id);
 
             testimonial.Status = 0;
+            _context.SaveChanges();
+
             if (testimonial == null)
             {
                 return NotFound();
             }
 
-            return View(testimonial);
+            return RedirectToAction("Index", "Testimonials");
         }
 
         // GET: Testimonials/Create
         public IActionResult Create()
         {
+            if (HttpContext.Session.GetInt32("UserId") == null)
+            {
+                return RedirectToAction("Login", "LoginAndRegestration");
+            }
+
             ViewData["HomeId"] = new SelectList(_context.Homes, "Id", "Id");
             ViewData["Status"] = new SelectList(_context.Checklists, "CheckedId", "CheckedId");
             ViewData["UserId"] = new SelectList(_context.Users, "UserId", "UserId");
@@ -102,19 +110,21 @@ namespace Hall_Reservation.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Rating,Opinion,UserId,HomeId,Status")] Testimonial testimonial)
+        public async Task<IActionResult> Create([Bind("Id,Rating,Opinion")] Testimonial testimonial)
         {
             if (ModelState.IsValid)
             {
+                testimonial.UserId = HttpContext.Session.GetInt32("UserId");
+                testimonial.HomeId = _context.Homes.First().Id;
                 testimonial.Status = 2;
                 _context.Add(testimonial);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+               
             }
             ViewData["HomeId"] = new SelectList(_context.Homes, "Id", "Id", testimonial.HomeId);
             ViewData["Status"] = new SelectList(_context.Checklists, "CheckedId", "CheckedId", testimonial.Status);
             ViewData["UserId"] = new SelectList(_context.Users, "UserId", "UserId", testimonial.UserId);
-            return View(testimonial);
+            return RedirectToAction("IndexUser", "Home");
         }
 
         // GET: Testimonials/Edit/5

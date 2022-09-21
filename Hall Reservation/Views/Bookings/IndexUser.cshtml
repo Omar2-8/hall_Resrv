@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Hall_Reservation.Models.Booking>
+
+@{
+    ViewData["Title"] = "IndexUser";
+    Layout = "~/Views/Shared/Home.cshtml";  
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hall)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Creation_Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hall.HallId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Creation_Date)
+            </td>
+            <td>
+                <a asp-action="Accept" asp-route-id="@item.BookingId">Accept</a> |
+                <a asp-action="Decline" asp-route-id="@item.BookingId">Decline</a> |
+                <a asp-action="Delete" asp-route-id="@item.BookingId">Delete Request</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

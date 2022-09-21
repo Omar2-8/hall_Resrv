@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hall_Reservation.Models
 {
@@ -24,6 +25,8 @@ namespace Hall_Reservation.Models
         public long? Phonenumber { get; set; }
         public string? Email { get; set; }
         public string? UserImage { get; set; }
+        [NotMapped]
+        public virtual IFormFile ImageFile { get; set; }
 
         public virtual ICollection<Booking> Bookings { get; set; }
         public virtual ICollection<Checked> Checkeds { get; set; }

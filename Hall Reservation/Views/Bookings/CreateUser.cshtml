@@ -1,0 +1,46 @@
+﻿@model Hall_Reservation.Models.Booking
+
+@{
+    ViewData["Title"] = "CreateUser";
+    Layout = "~/Views/Shared/Home.cshtml";  
+
+    var hallId = ViewBag.HallId;
+    var user = ViewBag.UserId;
+}
+
+
+
+<h2>Booking hall</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HallId" class="control-label"></label>
+                <input readonly asp-for="HallId" class ="form-control"  value=" @hallId"></input>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input readonly asp-for="UserId" class ="form-control"  value="@user"></input>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Book Now" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+ 
+ 
