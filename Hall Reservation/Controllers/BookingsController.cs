@@ -33,8 +33,33 @@ namespace Hall_Reservation.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var modelContext = _context.Bookings.Include(b => b.Hall).Include(b => b.User);
-            return View(await modelContext.ToListAsync());
+
+            var checkds = _context.Checkeds.Where(x => x.Status == 3).ToList();
+            List<Booking> book = new List<Booking>();
+            foreach (var x in checkds)
+            {
+                if (x.Status == 3)
+                {
+                    var t = _context.Bookings.Find(x.BookingId);
+                    book.Add(new Booking
+                    {
+                        BookingId = t.BookingId,
+                        StartDate = t.StartDate,
+                        EndDate = t.EndDate,
+                        HallId = t.HallId,
+                        User = t.User,
+                        Creation_Date = t.Creation_Date
+
+
+                    }) ;
+                }
+
+
+            }
+
+            return View(book);
+            //var modelContext = _context.Bookings.Include(b => b.Hall).Include(b => b.User);
+            //return View(await modelContext.ToListAsync());
         }
         public async Task<IActionResult> Index1()
         {
@@ -104,8 +129,26 @@ namespace Hall_Reservation.Controllers
         {
             if (ModelState.IsValid)
             {
+
+
                 booking.Creation_Date = DateTime.Now;
                 _context.Add(booking);
+                await _context.SaveChangesAsync();
+                var check=new Checked()
+                {
+                    Status = 3,
+                    CheckedDate = DateTime.Now,
+                    BookingId = booking.BookingId,
+                    HallId = booking.HallId,
+                    UserId = booking.UserId,
+                    
+                    
+
+
+                };
+                
+                _context.Add(check);
+                
                 await _context.SaveChangesAsync();
                 Content("<script language='javascript' type='text/javascript'>alert('Thanks for your reservation! You will reseve an Email when we Confirm your Reservation');</script>");
                 return RedirectToAction("IndexUser", "Halls");
@@ -142,17 +185,24 @@ namespace Hall_Reservation.Controllers
             var booking = await _context.Bookings.FindAsync(id);
             var user = await _context.Users.FindAsync(booking.UserId);
             sendEmail(user.Email,user.UserId);
-            new Checked()
-            {
-                Status = 1,
-                CheckedDate = DateTime.Now,
-                BookingId = booking.BookingId,
-                HallId = booking.HallId,
-                UserId = booking.UserId,
+            var check = _context.Checkeds.First(x=>x.BookingId ==booking.BookingId);
+            check.Status = 1;
+            check.CheckedDate = DateTime.Now;
+            check.BookingId = booking.BookingId;
+            check.HallId = booking.HallId;
+            check.UserId = booking.UserId;
+
+            //{
+            //    Status = 1,
+            //    CheckedDate = DateTime.Now,
+            //    BookingId = booking.BookingId,
+            //    HallId = booking.HallId,
+            //    UserId = booking.UserId,
 
 
-            };
-
+            //};
+             
+            _context.SaveChanges();
 
             if (booking == null)
             {
@@ -160,14 +210,14 @@ namespace Hall_Reservation.Controllers
             }
             ViewData["HallId"] = new SelectList(_context.Halls, "HallId", "HallId", booking.HallId);
             ViewData["UserId"] = new SelectList(_context.Users, "UserId", "UserId", booking.UserId);
-            return RedirectToAction("Index", "Bookings"); ;
+            return RedirectToAction("Index", "Bookings");  
         }
         private void sendEmail(string userEmail,decimal id)
         {
             var email = new MimeMessage();
             email.From.Add(MailboxAddress.Parse(_config.GetSection("EmailConfiguration:From").Value));
             email.To.Add(MailboxAddress.Parse(userEmail));
-            email.Subject = "Employee Password ";
+            email.Subject = "Hall Reservation Status ";
             email.Body = new TextPart(TextFormat.Html) { Text = "you reservation Have been Confirmed !! \n please head to this link to complete your payment \n https://localhost:44342/Visas/Create/"+id};
             var smtp = new SmtpClient();
             smtp.Connect(_config.GetSection("EmailConfiguration:SmtpServer").Value, 587, SecureSocketOptions.StartTls);
@@ -184,23 +234,21 @@ namespace Hall_Reservation.Controllers
             }
 
             var booking = await _context.Bookings.FindAsync(id);
-            new Checked()
-            {
-                Status = 0,
-                CheckedDate = DateTime.Now,
-                BookingId = booking.BookingId,
-                HallId = booking.HallId,
-                UserId = booking.UserId,
-
-
-            };
+            var check = _context.Checkeds.First(x => x.BookingId == booking.BookingId);
+            check.Status = 0;
+            check.CheckedDate = DateTime.Now;
+            check.BookingId = booking.BookingId;
+            check.HallId = booking.HallId;
+            check.UserId = booking.UserId;
+            
+            _context.SaveChanges();
             if (booking == null)
             {
                 return NotFound();
             }
             ViewData["HallId"] = new SelectList(_context.Halls, "HallId", "HallId", booking.HallId);
             ViewData["UserId"] = new SelectList(_context.Users, "UserId", "UserId", booking.UserId);
-            return View(booking);
+            return RedirectToAction("Index", "Bookings");
         }
 
 

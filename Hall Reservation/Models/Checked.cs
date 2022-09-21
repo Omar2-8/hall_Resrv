@@ -14,7 +14,7 @@ namespace Hall_Reservation.Models
         public decimal? UserId { get; set; }
         public decimal? HallId { get; set; }
         public decimal? BookingId { get; set; }
-        public DateTime CheckedDate { get; set; }
+        public DateTime? CheckedDate { get; set; }
         public decimal? Status { get; set; }
 
         public virtual Booking? Booking { get; set; }

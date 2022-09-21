@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Home.cshtml"; 
 }
 
 <h1>Details</h1>
@@ -28,7 +29,7 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Booking.BookingId)
         </dd>
-        <dt class = "col-sm-2">
+        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.HallNameNavigation)
         </dt>
         <dd class = "col-sm-10">
@@ -39,28 +40,25 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PayAmountNavigation.HallId)
-        </dd>
+        </dd>*@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.PayUser)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PayUser.UserId)
+            @Html.DisplayFor(model => model.PayUser.UserName)
         </dd>
-        <dt class = "col-sm-2">
+        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.StatusNavigation)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.StatusNavigation.CheckId)
-        </dd>
+        </dd>*@
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Visa)
+            @Html.DisplayNameFor(model => model.Visa.VisaAmount)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Visa.VisaId)
+            @Html.DisplayFor(model => model.Visa.VisaAmount)
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.PayId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

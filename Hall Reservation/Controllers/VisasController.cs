@@ -63,9 +63,10 @@ namespace Hall_Reservation.Controllers
             {
                 _context.Add(visa);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("index","Home");
+                return RedirectToAction("Create","Payments",new {id = id});
             }
             ViewData["UserId"] = new SelectList(_context.Users, "UserId", "UserId", visa.UserId);
+
             return View(visa);
         }
 

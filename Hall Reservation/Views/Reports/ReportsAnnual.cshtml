@@ -1,0 +1,149 @@
+﻿@model IEnumerable<Hall_Reservation.Models.Checked>
+
+
+@{
+    ViewData["Title"] = "ReportsAnnual";
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+    //var NumberOfUser = ViewBag.NumberOfUser;
+    //   var HallBooked = ViewBag.HallBooked;
+    //   var HallNotBooked = ViewBag.HallNotBooked;
+    //   var AllHall = ViewBag.AllHall;
+    var NumberOfUsersWhoHaveBooked = ViewBag.NumberOfUsersWhoHaveBooked;
+    var ReportDate = ViewBag.ReportDate;
+
+}
+
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/buttons/2.0.0/css/buttons.dataTables.min.css" rel="stylesheet" />
+    @*<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+*@
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>  
+                               
+
+
+<div class="col-lg-12 col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-primary" style="background: linear-gradient(90deg, #6D91C5, #5E72E4);">
+                     <div class="row">
+                         <form action="ReportsAnnual" method="post" class="navbar-form">
+                            <span class="bmd-form-group">
+                                <div class="input-group no-border">
+                                    <div class="col-8">
+                                        <div class="form-group">
+                                            <label for="checkedDate" style="color:white;"><b>Enter the Year</b></label>
+                                            <input type="month" value="" class="form-control" name="checkedDate" placeholder="checkedDate">
+@*                                            <input name="checkedDate" id="date-own" class="form-control" style="width: 300px;" type="text" placeholder="checkedDate">*@
+                                        </div>                                      
+                                    </div> 
+                                    <br /> 
+                                   @* <div class="col-5">
+                                        <div class="form-group" >
+                                            <label  for="endDate" style="color:white;"><b>End Date</b></label>
+                                            <input type="date" value="" class="form-control" name="endDate" placeholder="End Date">
+                                        </div>
+                                    </div>*@
+                                    <div class="col-4">
+                                        <div class="form-group" style="margin-top:25px;" class="mx-3">
+                                            <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                                <i class="material-icons">search</i>
+                                            @*<div class="ripple-container"></div>*@
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                         </form>
+                     </div>
+
+                  </div>
+                  <div class="card-body table-responsive">
+                      <table class="table" @*style="background-color:black;color:wihte"*@ id="example">  
+                             <thead>
+                                <tr>
+                                    <th>User Name</th>
+                                    <th>Hall Name</th>
+                                    <th>Booking Number</th>
+                                    <th>submit Date</th>                                    
+                                    <th>Status</th>
+                                </tr>
+                             </thead>
+                            <tbody @*style="background-color:black ; color:wihte"*@>
+
+                                @foreach(var item in Model )
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.User.UserName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Hall.HallName)
+                                        </td>
+                                          <td>
+                                            @Html.DisplayFor(modelItem => item.Booking.BookingId)
+                                        </td>
+                                           <td>
+                                            @Html.DisplayFor(modelItem => item.CheckedDate)
+                                        </td>
+                                         <td>
+                                            @Html.DisplayFor(modelItem => item.Status)
+                                        </td>
+                                    </tr>
+                                }
+                                 
+                            </tbody>
+
+                                <tr>
+                                    <td>Number of users who have booked</td>
+                                    <td>@NumberOfUsersWhoHaveBooked</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                <tr>
+                                    <td>Report date</td>
+                                    <td>@ReportDate</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                      </table>
+
+                  </div>
+             </div>
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js" defer></script>
+<script src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js" defer></script>
+<script>
+    $(document).ready(function(){
+        $('#example').DataTable({
+            dom:'Bfrtip',
+            buttons:[
+                'copyHtml5',
+                'excelHtml5',
+                'csvHtml5',
+                'pdfHtml5'
+            ]
+        });;
+    });
+    $("#date-own").datepicker({
+  minViewMode: 2,
+  format: "yyyy"
+});
+</script>
+
+  

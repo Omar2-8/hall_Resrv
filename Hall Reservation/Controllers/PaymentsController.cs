@@ -50,8 +50,40 @@ namespace Hall_Reservation.Controllers
         }
 
         // GET: Payments/Create
-        public IActionResult Create()
+        public IActionResult Create(decimal id)
         {
+            var visa = _context.Visas.First(x => x.UserId == id);
+            var booking = _context.Bookings.First(x => x.UserId == id);
+            var check = _context.Checkeds.First(x => x.UserId == id);
+            var hall = _context.Halls.First(x => x.HallId == check.HallId);
+
+            var payment = new Payment();
+            payment.Status = 1;
+            if (visa.VisaAmount - hall.BookingPrice > 0)
+            {
+                visa.VisaAmount -= hall.BookingPrice;
+                payment.PayAmount = hall.BookingPrice;
+                payment.PayDesc = "Thanks for Dealing With us";
+
+
+            }
+            else
+            {
+                payment.PayAmount = 0;
+                payment.Status = 0;
+                payment.PayDesc = "Insuficant Ballence";
+
+
+            }
+            payment.PayDate = DateTime.Now;
+            payment.PayUserId = id;
+            payment.VisaId = visa.VisaId;
+            payment.BookingId = booking.BookingId;
+            _context.Add(payment);
+            _context.SaveChanges();
+            //await _context.SaveChangesAsync();
+            return RedirectToAction("Details", new { id = payment.PayId });
+
             ViewData["BookingId"] = new SelectList(_context.Bookings, "BookingId", "BookingId");
             ViewData["HallName"] = new SelectList(_context.Halls, "HallId", "HallId");
             ViewData["PayAmount"] = new SelectList(_context.Halls, "HallId", "HallId");
@@ -66,22 +98,65 @@ namespace Hall_Reservation.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PayId,Status,PayAmount,HallName,PayDate,PayDesc,PayUserId,VisaId,BookingId")] Payment payment)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(payment);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["BookingId"] = new SelectList(_context.Bookings, "BookingId", "BookingId", payment.BookingId);
-            ViewData["HallName"] = new SelectList(_context.Halls, "HallId", "HallId", payment.HallName);
-            ViewData["PayAmount"] = new SelectList(_context.Halls, "HallId", "HallId", payment.PayAmount);
-            ViewData["PayUserId"] = new SelectList(_context.Users, "UserId", "UserId", payment.PayUserId);
-            ViewData["Status"] = new SelectList(_context.Checkeds, "CheckId", "CheckId", payment.Status);
-            ViewData["VisaId"] = new SelectList(_context.Visas, "VisaId", "VisaId", payment.VisaId);
-            return View(payment);
-        }
+        //public async Task<IActionResult> Create([Bind("PayId,Status,PayAmount,HallName,PayDate,PayDesc,PayUserId,VisaId,BookingId")] Payment payment)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _context.Add(payment);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    ViewData["BookingId"] = new SelectList(_context.Bookings, "BookingId", "BookingId", payment.BookingId);
+        //    ViewData["HallName"] = new SelectList(_context.Halls, "HallId", "HallId", payment.HallName);
+        //    ViewData["PayAmount"] = new SelectList(_context.Halls, "HallId", "HallId", payment.PayAmount);
+        //    ViewData["PayUserId"] = new SelectList(_context.Users, "UserId", "UserId", payment.PayUserId);
+        //    ViewData["Status"] = new SelectList(_context.Checkeds, "CheckId", "CheckId", payment.Status);
+        //    ViewData["VisaId"] = new SelectList(_context.Visas, "VisaId", "VisaId", payment.VisaId);
+        //    return View(payment);
+        //}
+        //public async Task<IActionResult> Create(decimal id)
+        //{
+        //    var visa = _context.Visas.First(x => x.UserId == id);
+        //    var booking = _context.Bookings.First(x => x.UserId == id);
+        //    var check = _context.Checkeds.First(x => x.UserId == id);
+        //    var hall = _context.Halls.First(x => x.HallId == check.HallId);
+
+        //    var payment = new Payment();
+        //    payment.Status = 1;
+        //    if (visa.VisaAmount - hall.BookingPrice > 0)
+        //    {
+        //        visa.VisaAmount -= hall.BookingPrice;
+        //        payment.PayAmount = hall.BookingPrice;
+
+
+        //    }
+        //    else
+        //    {
+        //        payment.PayAmount = 0;
+        //        payment.Status = 0;
+        //        payment.PayDesc = "Insuficant Ballence";
+
+
+        //    }
+        //    payment.PayUserId = id;
+        //    payment.VisaId = visa.VisaId;
+        //    payment.BookingId = booking.BookingId;
+        //    _context.Add(payment);
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction("Details", new {id = payment.PayId});
+        //    //return RedirectToAction();
+
+
+
+            
+        //    //ViewData["BookingId"] = new SelectList(_context.Bookings, "BookingId", "BookingId", payment.BookingId);
+        //    //ViewData["HallName"] = new SelectList(_context.Halls, "HallId", "HallId", payment.HallName);
+        //    //ViewData["PayAmount"] = new SelectList(_context.Halls, "HallId", "HallId", payment.PayAmount);
+        //    //ViewData["PayUserId"] = new SelectList(_context.Users, "UserId", "UserId", payment.PayUserId);
+        //    //ViewData["Status"] = new SelectList(_context.Checkeds, "CheckId", "CheckId", payment.Status);
+        //    //ViewData["VisaId"] = new SelectList(_context.Visas, "VisaId", "VisaId", payment.VisaId);
+        //    //return View(payment);
+        //}
 
         // GET: Payments/Edit/5
         public async Task<IActionResult> Edit(decimal? id)
