@@ -40,7 +40,7 @@ namespace Hall_Reservation.Models
             if (!optionsBuilder.IsConfigured)
             {
  
-                optionsBuilder.UseOracle("USER ID= JOR15_User88;PASSWORD=Ohmmss9852;DATA SOURCE=94.56.229.181:3488/traindb");
+                optionsBuilder.UseOracle("USER ID= **********;PASSWORD=**********;DATA SOURCE=94.56.229.181:3488/traindb");
             }
         }
 
